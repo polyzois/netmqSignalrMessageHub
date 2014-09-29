@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netmqSignalrMessageHub", "src\netmqSignalrMessageHub\netmqSignalrMessageHub.csproj", "{B60AB7AC-FC0D-4553-8C94-2D0243D46AC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleServer", "samples\SampleServer\SampleServer.csproj", "{2F6CDCEF-A68A-4CD3-976D-D3DBA55DCC21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleClient", "samples\SampleClient\SampleClient.csproj", "{407534D9-79F3-4E72-A28D-4711312C5D13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B60AB7AC-FC0D-4553-8C94-2D0243D46AC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B60AB7AC-FC0D-4553-8C94-2D0243D46AC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B60AB7AC-FC0D-4553-8C94-2D0243D46AC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B60AB7AC-FC0D-4553-8C94-2D0243D46AC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F6CDCEF-A68A-4CD3-976D-D3DBA55DCC21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F6CDCEF-A68A-4CD3-976D-D3DBA55DCC21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F6CDCEF-A68A-4CD3-976D-D3DBA55DCC21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F6CDCEF-A68A-4CD3-976D-D3DBA55DCC21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{407534D9-79F3-4E72-A28D-4711312C5D13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{407534D9-79F3-4E72-A28D-4711312C5D13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{407534D9-79F3-4E72-A28D-4711312C5D13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{407534D9-79F3-4E72-A28D-4711312C5D13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
