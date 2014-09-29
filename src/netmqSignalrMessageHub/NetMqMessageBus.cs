@@ -9,6 +9,15 @@ using NetMQ;
 
 namespace netmqSignalrMessageHub
 {
+
+    /// <summary>
+    /// Replicate all activity in current SignalR Bus using NetMq.
+    /// Purpose is to scale out using NetMq in a brokerless fashion. 
+    /// Using one subscriver socket and one publisher socket.
+    /// A single socket in NetMq can subscribe to many endpoints so this setup should suffice.
+    /// 
+    /// 
+    /// </summary>
     public class NetMqMessageBus : ScaleoutMessageBus
     {
 
@@ -18,15 +27,21 @@ namespace netmqSignalrMessageHub
 
         SubscriberSocket subScoket;
 
+
         public NetMqMessageBus(IDependencyResolver resolver, ScaleoutConfiguration configuration,PublisherSocket pubSock,SubscriberSocket sub):base(resolver,configuration){
 
             this.pubSock = pubSock;
             this.subScoket = sub;
 
-            Initialize ();
+            InitializeSubscriber ();
             Open (0);
         }
 
+        /// <summary>
+        /// Send to netmq and also send out to local SignalR hub. The NetMq setup is fire and forget and we will not reveive anything back. That is the reason for sending it locally as well.
+        /// </summary>
+        /// <param name="streamIndex">Stream index.</param>
+        /// <param name="messages">Messages.</param>
         protected override Task Send(int streamIndex, IList<Message> messages)
         {
 
@@ -49,8 +64,11 @@ namespace netmqSignalrMessageHub
         }
 
 
-
-        void Initialize ()
+        /// <summary>
+        /// Fire of a background thread to use for the incoming messages.
+        /// TODO is OnRecieved thread safe? We can have traffic from local host as well as from this subscriber socket.
+        /// </summary>
+        void InitializeSubscriber ()
         {
             Task.Factory.StartNew (() => {
                 try{
