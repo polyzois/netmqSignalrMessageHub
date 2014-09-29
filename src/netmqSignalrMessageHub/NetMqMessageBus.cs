@@ -38,7 +38,8 @@ namespace netmqSignalrMessageHub
         }
 
         /// <summary>
-        /// Send to netmq and also send out to local SignalR hub. The NetMq setup is fire and forget and we will not reveive anything back. That is the reason for sending it locally as well.
+        /// Send to netmq and also send out to local SignalR hub. 
+        /// The NetMq setup is fire and forget and we will not reveive anything back which is the reason for sending it locally as well.
         /// </summary>
         /// <param name="streamIndex">Stream index.</param>
         /// <param name="messages">Messages.</param>
@@ -52,7 +53,6 @@ namespace netmqSignalrMessageHub
 
             var scaleoutMessage = new ScaleoutMessage (messages);
 
-           // OutgoingSocketExtensions.
             pubSock.Send(scaleoutMessage.ToBytes());
 
             base.OnReceived (streamIndex,y, scaleoutMessage);
