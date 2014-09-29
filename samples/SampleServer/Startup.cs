@@ -16,8 +16,8 @@ namespace SampleServer
     {
         public void Configuration(IAppBuilder app)
         {
-           //TODO readd errorPage
-           // app.UseErrorPage(); 
+            app.Properties.Add( "host.AppMode" ,"development");
+            app.UseErrorPage(); 
 
             app.Map("/raw-connection", map =>
             {

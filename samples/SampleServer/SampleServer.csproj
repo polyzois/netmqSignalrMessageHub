@@ -69,6 +69,9 @@
     <Reference Include="Microsoft.Owin.Host.HttpListener">
       <HintPath>..\..\..\SignalR\packages\Microsoft.Owin.Host.HttpListener.2.1.0\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Owin.Diagnostics">
+      <HintPath>..\..\..\SignalR\packages\Microsoft.Owin.Diagnostics.2.1.0\lib\net40\Microsoft.Owin.Diagnostics.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
