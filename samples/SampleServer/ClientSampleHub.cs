@@ -1,9 +1,9 @@
 using System;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using Microsoft.AspNet.SignalR.Hubs;
+using Newtonsoft.Json;
 
 namespace Microsoft.AspNet.SignalR.Samples.Hubs.DemoHub
 {
@@ -33,6 +33,14 @@ namespace Microsoft.AspNet.SignalR.Samples.Hubs.DemoHub
         
         }
 
+        public void TraceMessageGroup(string groupName, TraceMessage message)
+        {
+            Console.WriteLine("TraceMessageGroup");
+            message.AddPlace("Server Hub");
+            Console.WriteLine(JsonConvert.SerializeObject(message));
+            Clients.Group(groupName).displayTraceMessage(message);
+
+        }
+
     }
-    
 }

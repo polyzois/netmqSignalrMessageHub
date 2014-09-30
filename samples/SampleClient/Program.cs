@@ -24,7 +24,13 @@ namespace Microsoft.AspNet.SignalR.Client40.Samples
 
             client.Run(serverUrl);
 
-            Console.ReadKey();
+            while (true)
+            {
+              var key=  Console.ReadKey();
+               
+                client.SendTrace(""+key.KeyChar);
+            }
+            
         }
     }
 }
